@@ -1,0 +1,14 @@
+[package]
+name = "bigquery-arrow2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+gcp-bigquery-client = "0.17.0"
+polars = {version="0.32.1", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy"]}
+thiserror = "1.0.48"
+backoff = {version = "0.4.0"}
+tokio = {version = "1.32.0", features = ["time"]}
+rayon = {version = "1.7.0"}
