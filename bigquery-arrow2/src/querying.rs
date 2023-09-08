@@ -182,16 +182,15 @@ fn table_cell_to_any<'a>(table_cell: &'a TableCell, field_type: &FieldType) -> A
     let value_as_ref = table_cell.value.as_ref().unwrap();
     match field_type {
         FieldType::String | FieldType::Bytes => AnyValue::Utf8(value_as_ref.as_str().unwrap()),
-        FieldType::Integer | FieldType::Int64 => AnyValue::Int64(value_as_ref.as_i64().unwrap()),
-        FieldType::Float | FieldType::Float64 => AnyValue::Float64(value_as_ref.as_f64().unwrap()),
+        FieldType::Integer | FieldType::Int64 => AnyValue::Int64(value_as_ref.as_str().unwrap().parse::<i64>().unwrap()),
+        FieldType::Float | FieldType::Float64 => AnyValue::Float64(value_as_ref.as_str().unwrap().parse::<f64>().unwrap()),
         FieldType::Numeric => {
             todo!()
         }
         FieldType::Bignumeric => {
             todo!()
         }
-        FieldType::Boolean => AnyValue::Boolean(value_as_ref.as_bool().unwrap()),
-        FieldType::Bool => AnyValue::Boolean(value_as_ref.as_bool().unwrap()),
+        FieldType::Boolean |  FieldType::Bool => AnyValue::Boolean(value_as_ref.as_str().unwrap().parse::<bool>().unwrap()),
         FieldType::Timestamp => {
             let ts_str = value_as_ref.as_str().unwrap();
             let timestamp_ns = (ts_str.parse::<f64>().unwrap() * (1e9f64)) as i64;
