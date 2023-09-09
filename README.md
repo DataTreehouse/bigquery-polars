@@ -1,1 +1,1 @@
-# bigquery-arrow2
+# bigquery-polars
