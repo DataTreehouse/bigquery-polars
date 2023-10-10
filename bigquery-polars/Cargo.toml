@@ -1,12 +1,12 @@
 [package]
 name = "bigquery-polars"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-tls = ["gcp-bigquery-client/rust-tls"]
 
 [dependencies]
-gcp-bigquery-client = "0.17.0"
+gcp-bigquery-client = {version="0.17.0"}
 polars = {version="0.32.1", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy"]}
 thiserror = "1.0.48"
 backoff = {version = "0.4.0"}
