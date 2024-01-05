@@ -1,13 +1,13 @@
 [package]
 name = "bigquery-polars"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 rust-tls = ["gcp-bigquery-client/rust-tls"]
 
 [dependencies]
 gcp-bigquery-client = {version= "0.18.0" }
-polars = {version= "0.36.2", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy", "horizontal_concat"]}
+polars = {version= "0.35.4", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy", "horizontal_concat"]}
 thiserror = "1.0.48"
 backoff = {version = "0.4.0"}
 tokio = {version = "1.32.0", features = ["time"]}
