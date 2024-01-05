@@ -6,8 +6,8 @@ edition = "2021"
 rust-tls = ["gcp-bigquery-client/rust-tls"]
 
 [dependencies]
-gcp-bigquery-client = {version="0.17.0"}
-polars = {version="0.32.1", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy"]}
+gcp-bigquery-client = {version= "0.18.0" }
+polars = {version= "0.36.2", features = ["dtype-full", "cse", "nightly", "performant", "timezones", "lazy", "horizontal_concat"]}
 thiserror = "1.0.48"
 backoff = {version = "0.4.0"}
 tokio = {version = "1.32.0", features = ["time"]}
